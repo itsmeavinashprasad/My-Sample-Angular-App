@@ -12,7 +12,7 @@ export class GithubService {
     }
     
     private headers = {
-        "Authorization": 'Token cf064161b502da2b33e58e3b05144e80f8c25243'
+        "Authorization": 'Token 4048d46706b4c6c97029ad0a28ab7e63ffd06ac2'
     }
     private userName = "itsmeavinashprasad";
     private httpOptions = {
@@ -28,6 +28,13 @@ export class GithubService {
     getRepoList(){
         var url = "https://api.github.com/user/repos";
         return this.http.get(url, this.httpOptions);
-
+        
     }
+    
+    getSearchInfo(keyword){
+        var url = "https://api.github.com/search/repositories?q="+keyword;
+        return this.http.get(url, this.httpOptions);
+        
+    }
+
 }

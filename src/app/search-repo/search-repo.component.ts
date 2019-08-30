@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GithubService } from '../github.service';
+
 
 @Component({
   selector: 'app-search-repo',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchRepoComponent implements OnInit {
 
-  constructor() { }
+    constructor(private route: ActivatedRoute, private _githubService: GithubService) { }
 
-  ngOnInit() {
-  }
+    private searchInfo:any;
+
+    ngOnInit() {
+        var keyword = this.route.snapshot.paramMap.get('keyword');
+        if(keyword != null){
+            this._githubService.getSearchInfo(keyword)
+                    .subscribe(data => this.searchInfo = data);
+        }
+    }
+
 
 }

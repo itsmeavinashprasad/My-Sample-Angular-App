@@ -24,9 +24,9 @@
     
         </ul>
 
-        <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+        <form class="form-inline my-2 my-lg-0" method="GET" onsubmit="sample()">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #keyword required>
+            <button class="btn btn-outline-success " type="submit" id="search-btn" (click)="sample(keyword.value)" >Search</button>
         </form>
     </div>
 </nav>
@@ -36,6 +36,6 @@
 
     </app-profile-sidebar>
     <app-others id="others">
-
+        
     </app-others>
 </div>

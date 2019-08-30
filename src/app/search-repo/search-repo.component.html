@@ -1,1 +1,32 @@
-<p>search-repo works!</p>
+
+<div id="search-wrapper">
+    <div class="search-item" *ngFor="let repo of searchInfo['items']">
+        <div class="avatar-image-wrapper">
+            <img src = "{{repo.owner.avatar_url}}" class="avatar-image" >
+        </div>
+        <div class="repo-details">
+                <h4> <a href="{{repo.html_url}}"> {{repo.name}} </a> </h4>
+                <p class="item-desc"> {{repo.description}} </p>
+                <p class="item-desc"> 
+                        Owner: <a href="{{repo.owner.html_url}}" > {{repo.owner.login}} </a> 
+                </p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+    <!-- <div class="search-item">
+
+        <div class="avatar-image-wrapper">
+            <img src = "{{searchInfo['items'][0].owner.avatar_url}}" class="avatar-image" >
+        </div>
+        <div class="repo-details">
+                <h4> <a href="{{searchInfo['items'][0].html_url}}"> {{searchInfo['items'][0].name}} </a> </h4>
+                <p class="item-desc"> {{searchInfo['items'][0].description}} </p>
+                <p class="item-desc"> 
+                       Owner: <a href="{{searchInfo['items'][0].owner.html_url}}" > {{searchInfo['items'][0].owner.login}} </a> 
+                </p>
+        </div>
+    </div> -->
+
+
+</div>

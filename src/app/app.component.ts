@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from './github.service';
 import { User } from 'src/assets/userInterface';
+import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-root',
@@ -10,14 +12,23 @@ import { User } from 'src/assets/userInterface';
 export class AppComponent implements OnInit{
     title = 'github-webapp';
 
-    constructor (private _githubService : GithubService) {
+    constructor (private router : Router) {
 
     }
 
-    public userJson:any;
 
     ngOnInit() {
-        this._githubService.getUserData()
-            .subscribe(data => this.userJson = data);
+    }
+
+    sample(keyword){
+
+        if(keyword == ''){
+            console.log('null keyword');
+            return;
+        }
+        else{
+            this.router.navigateByUrl('').then(() => {
+            this.router.navigate(['/search',keyword]);});
+        }
     }
 }
