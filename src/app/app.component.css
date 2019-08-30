@@ -1,3 +1,5 @@
+
+/* nav bar */
 #brand-logo{
     width: 30px;
 }
@@ -10,3 +12,30 @@
 #search-btn:hover {
     color: lightgray;
 }
+/* nav bar*/
+
+/* main body wrapper */
+#main-body-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width:986px){
+    #main-body-wrapper{
+        flex-direction: column;
+    }
+}
+/* main body wrapper */
+
+/* profile sidebar */
+#profile-sidebar{
+    /* background: orange; */
+    flex-basis: 25%;
+}
+/* profile sidebar */
+
+/* others */
+#others {
+    /* background: pink; */
+    flex-basis: 75%;
+}
+/* others */

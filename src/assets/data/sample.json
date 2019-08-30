@@ -1,5 +1,8 @@
-[
-    { "name":"Avinash" },
-    { "name":"Saptarshi" },
-    { "name":"Himanshu" }
-]
+
+{
+    "abc":[
+        {
+            "name":"xyz"
+        }
+    ]
+}

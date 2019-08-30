@@ -1,0 +1,24 @@
+<div id="sidebar-wrapper">
+    <div  id="image-wrapper">
+        <img src={{userJson.avatar_url}} alt="Card image" id="profile-photo">
+    </div>
+    
+    <div  id="user-details" >
+        <h4 id="user-name"> {{userJson.name}} </h4>
+        <h5 id="user-login"> {{userJson.login}} </h5>
+        <br>
+        
+        <p id="user-location" > 
+            <i class="fas fa-map-marker-alt"></i>  
+            {{userJson.location}} 
+        </p>
+        
+        <p id="user-email" > 
+            <i class="fas fa-envelope"></i> 
+            <a href="mailto:{{userJson.email}}" > {{userJson.email}} </a>
+        </p>
+        
+        <p id="user-bio" > {{userJson.bio}} </p>
+
+    </div>
+</div>

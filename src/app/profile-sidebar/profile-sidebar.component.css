@@ -1,0 +1,39 @@
+#sidebar-wrapper{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#profile-photo{
+    width: 100%;
+}
+#user-details{
+    padding: 10px;
+}
+@media (max-width: 986px){
+    #sidebar-wrapper {
+        flex-direction: row;
+    }
+    #image-wrapper{
+        width: 40%;
+        /* float: left; */
+    }
+    #user-details{
+        /* float: right;/ */
+        width: 60%;
+    }
+}
+
+
+.card-body{
+    padding: 10px;
+}
+
+#user-login{
+    color: #9c9998;
+}
+
+#user-bio, #user-location, #user-email {
+    font-size: 14px;
+}
+
