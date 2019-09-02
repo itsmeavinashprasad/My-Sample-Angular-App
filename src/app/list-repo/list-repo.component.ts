@@ -21,7 +21,7 @@ export class ListRepoComponent implements OnInit {
     setRepoDetails(index){
         var repodetails = this.listRepo[index];
         this._githubService.setRepoDetails(repodetails);
-        this.router.navigate(['/details']);
+        this.router.navigate(['/details']); 
 
     }
 

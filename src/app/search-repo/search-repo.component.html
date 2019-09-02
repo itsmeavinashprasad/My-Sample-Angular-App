@@ -1,9 +1,9 @@
 
 <div id="search-wrapper">
-    <div class="search-item" *ngFor="let repo of searchInfo['items']">
-        <div class="avatar-image-wrapper">
+    <div class="search-item" (click)="setRepoDetails(i)" *ngFor="let repo of searchInfo['items']; index as i">
+        <!-- <div class="avatar-image-wrapper">
             <img src = "{{repo.owner.avatar_url}}" class="avatar-image" >
-        </div>
+        </div> -->
         <div class="repo-details">
                 <h4> <a href="{{repo.html_url}}"> {{repo.name}} </a> </h4>
                 <p class="item-desc"> {{repo.description}} </p>
@@ -11,7 +11,7 @@
                         Owner: <a href="{{repo.owner.html_url}}" > {{repo.owner.login}} </a> 
                 </p>
         </div>
-        <div class="clearfix"></div>
+        <!-- <div class="clearfix"></div> -->
     </div>
     
     <!-- <div class="search-item">

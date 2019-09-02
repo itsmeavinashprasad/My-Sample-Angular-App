@@ -13,6 +13,11 @@
     width: 80%;
     
 }
+@media (max-width: 986px){
+    #repo-details-wrapper{
+        width: 100%;
+    }
+}
 a {
     color: black;
 }

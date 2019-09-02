@@ -11,7 +11,10 @@
         Last Modified : {{ repoDetails.updated_at | date: 'medium' }} 
 
     </p>
-    <hr>
-    <button class="btn btn-primary" id="delete-btn" (click)="deleteRepo()" > Delete Repository </button>
+    <div *ngIf="isowner; then thenBlock"></div>
+    <ng-template #thenBlock>
+        <hr>
+        <button class="btn btn-primary" id="delete-btn" (click)="deleteRepo()" > Delete Repository </button>
+    </ng-template>
 
 </div>

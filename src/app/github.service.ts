@@ -7,6 +7,7 @@ import { retry, catchError  } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
 })
+
 export class GithubService {
 
     constructor(private http: HttpClient) { 
@@ -20,7 +21,10 @@ export class GithubService {
         "method" : "GET",
         "headers" : this.headers
     }
+    
     private repodetails: any;
+    private searchRepoDetails: any;
+    
 
     getUserData() {
         var url = "https://api.github.com/users/" + this.userName;
@@ -45,7 +49,7 @@ export class GithubService {
         return this.http.post<any>(url, jsonString, this.httpOptions);
     }
 
-    setRepoDetails(repodetails){
+    setRepoDetails(repodetails:any){
         this.repodetails = repodetails;
     }
 
@@ -53,7 +57,12 @@ export class GithubService {
         return this.repodetails;
     }
 
+    getUserName(){
+        return this.userName;
+    }
+
     deleteRepo(){
+        
         var url = "https:api.github.com/repos/"+this.userName+"/"+this.repodetails.name;
         if(confirm('You are about to delete: ' + url) == true){
             return this.http.delete(url, this.httpOptions);

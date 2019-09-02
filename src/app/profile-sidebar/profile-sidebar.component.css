@@ -17,6 +17,12 @@
     
 }
 
+@media (max-width: 986px){
+    #sidebar-wrapper{
+        margin-right: 10px;
+    }
+}
+
 #user-login a {
     text-decoration: none;
     color: #9c9998;
