@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../github.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class NewRepoComponent implements OnInit {
 
-    constructor(private _githubService: GithubService) { }
+    constructor(private _githubService: GithubService, private router: Router) { }
 
     isprivate: "true" ; 
 
@@ -20,6 +21,9 @@ export class NewRepoComponent implements OnInit {
     onSubmit(repoForm: NgForm ){
         if(repoForm.valid == true){
             console.log(repoForm.value);
+            this._githubService.postRepoRequest( JSON.stringify(repoForm) ).subscribe();
+            alert("New repository \"" + repoForm.controls['name'].value + "\" created");
+            this.router.navigate(['/repos']);
         }
         else{
             console.log('Form input not valid');
@@ -30,7 +34,7 @@ export class NewRepoComponent implements OnInit {
                 alert("Enter Repository Name");
             }
         }
-        // this._githubService.postRepoRequest( JSON.stringify(repoForm) ).subscribe();
+
     }
 
 }

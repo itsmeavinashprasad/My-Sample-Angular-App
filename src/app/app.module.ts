@@ -10,6 +10,7 @@ import { ProfileSidebarComponent } from './profile-sidebar/profile-sidebar.compo
 import { OthersComponent } from './others/others.component';
 import { NewRepoComponent } from './new-repo/new-repo.component';
 import { FormsModule } from '@angular/forms';
+import { RepoDetailsComponent } from './repo-details/repo-details.component';
 // import { ListRepoComponent } from './list-repo/list-repo.component';
 // import { SearchRepoComponent } from './search-repo/search-repo.component';
 
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     OthersComponent,
     routingComponents,
     NewRepoComponent,
+    RepoDetailsComponent,
     // ListRepoComponent,
     // SearchRepoComponent
   ],

@@ -14,7 +14,7 @@ export class GithubService {
     }
     
     private headers = {
-        "Authorization": 'Token c8e85c671bbbecb223fc601ca819a32f9bdcfe38'
+        "Authorization": 'Token 39e2d6429d2e617351b144d235a4581492295c77'
     }
     private userName = "itsmeavinashprasad";
     private httpOptions = {
