@@ -12,6 +12,15 @@
 #search-btn:hover {
     color: lightgray;
 }
+
+#brand-name{
+    color: white;
+}
+
+.nav-link, .navbar-brand{
+    cursor: pointer;
+}
+
 /* nav bar*/
 
 /* main body wrapper */

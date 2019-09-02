@@ -13,7 +13,7 @@ export class NewRepoComponent implements OnInit {
 
     constructor(private _githubService: GithubService, private router: Router) { }
 
-    isprivate: "true" ; 
+    private errorMsg = "";
 
     ngOnInit() {
     }
@@ -21,7 +21,9 @@ export class NewRepoComponent implements OnInit {
     onSubmit(repoForm: NgForm ){
         if(repoForm.valid == true){
             console.log(repoForm.value);
-            this._githubService.postRepoRequest( JSON.stringify(repoForm) ).subscribe();
+            this._githubService.postRepoRequest( JSON.stringify(repoForm.value)).
+                subscribe( error => this.errorMsg = error );
+            console.log("Error: "+this.errorMsg);
             alert("New repository \"" + repoForm.controls['name'].value + "\" created");
             this.router.navigate(['/repos']);
         }

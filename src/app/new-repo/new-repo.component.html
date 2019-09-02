@@ -3,9 +3,9 @@
     <div id="form-heading">
         <h3>Create a new repository</h3>
         <p>A repository contains all project files, including the revision history. </p>
-           
+    <hr>           
     </div>
-    
+
     <div id="new-repo-form-wrapper" >
         <form name="new-repo-form" #repoForm="ngForm" (ngSubmit)="onSubmit(repoForm)" method="POST" novalidate> 
             <div class="form-group">
@@ -37,7 +37,7 @@
                 </label>
             </div>
             <hr>
-            <button type="submit" value="Submit" class="btn btn-primary"> Make Repository </button>
+            <button type="submit" value="Submit" id="submit-button" class="btn btn-primary"> Make Repository </button>
         </form> 
     </div>
 

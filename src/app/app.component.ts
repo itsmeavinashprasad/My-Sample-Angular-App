@@ -32,6 +32,10 @@ export class AppComponent implements OnInit{
         }
     }
 
+    goHome(){
+        this.router.navigate(['']);
+    }
+
     newRepo(){
         this.router.navigate(['/newrepo']);
     }

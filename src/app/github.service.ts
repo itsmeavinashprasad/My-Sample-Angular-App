@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { User } from 'src/assets/userInterface';
-import { TouchSequence } from 'selenium-webdriver';
-import { Observable } from 'rxjs';
-import { ConstantPool } from '@angular/compiler';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+
+import { retry, catchError  } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -21,6 +20,7 @@ export class GithubService {
         "method" : "GET",
         "headers" : this.headers
     }
+    private repodetails: any;
 
     getUserData() {
         var url = "https://api.github.com/users/" + this.userName;
@@ -44,5 +44,26 @@ export class GithubService {
         console.log('in service: ' + jsonString);
         return this.http.post<any>(url, jsonString, this.httpOptions);
     }
+
+    setRepoDetails(repodetails){
+        this.repodetails = repodetails;
+    }
+
+    getRepoDetails(){
+        return this.repodetails;
+    }
+
+    deleteRepo(){
+        var url = "https:api.github.com/repos/"+this.userName+"/"+this.repodetails.name;
+        if(confirm('You are about to delete: ' + url) == true){
+            return this.http.delete(url, this.httpOptions);
+        }
+    }
+
+    // handleError(error: HttpErrorResponse){
+    //     return throwError( error.message || "Custome Error Msg");
+
+    // }
+
 
 }

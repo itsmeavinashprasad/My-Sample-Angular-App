@@ -1,6 +1,6 @@
 <div id="list-repo-wrapper">
     
-    <div class="list-repo-item" *ngFor="let repo of listRepo">
+    <div (click)="setRepoDetails(i)" class="list-repo-item" *ngFor="let repo of listRepo; index as i">
         <h4 > {{repo.name}} </h4>
         <p class="item-desc"> {{repo.description}} </p>
     </div>
