@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
 
     }
 
+    private myval = "";
 
     ngOnInit() {
     }
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit{
             return;
         }
         else{
+            (document.getElementById('searchForm') as HTMLFormElement).reset()
             this.router.navigateByUrl('').then(() => {
             this.router.navigate(['/search',keyword]);});
         }

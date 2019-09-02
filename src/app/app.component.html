@@ -24,8 +24,8 @@
     
         </ul>
 
-        <form class="form-inline my-2 my-lg-0" method="GET">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #keyword required>
+        <form class="form-inline my-2 my-lg-0" id="searchForm" method="GET">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #keyword id="{{myval}}" required>
             <button class="btn btn-outline-success " type="submit" id="search-btn" (click)="letsSearch(keyword.value)" >Search</button>
         </form>
     </div>
