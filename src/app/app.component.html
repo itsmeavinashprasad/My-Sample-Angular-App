@@ -19,14 +19,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">New Repository</a>
+            <a class="nav-link" href="/newrepo" (click)="newRepo()" >New Repository</a>
         </li>
     
         </ul>
 
-        <form class="form-inline my-2 my-lg-0" method="GET" onsubmit="sample()">
+        <form class="form-inline my-2 my-lg-0" method="GET">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #keyword required>
-            <button class="btn btn-outline-success " type="submit" id="search-btn" (click)="sample(keyword.value)" >Search</button>
+            <button class="btn btn-outline-success " type="submit" id="search-btn" (click)="letsSearch(keyword.value)" >Search</button>
         </form>
     </div>
 </nav>

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/assets/userInterface';
 import { TouchSequence } from 'selenium-webdriver';
+import { Observable } from 'rxjs';
+import { ConstantPool } from '@angular/compiler';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +14,7 @@ export class GithubService {
     }
     
     private headers = {
-        "Authorization": 'Token 4048d46706b4c6c97029ad0a28ab7e63ffd06ac2'
+        "Authorization": 'Token c8e85c671bbbecb223fc601ca819a32f9bdcfe38'
     }
     private userName = "itsmeavinashprasad";
     private httpOptions = {
@@ -35,6 +37,12 @@ export class GithubService {
         var url = "https://api.github.com/search/repositories?q="+keyword;
         return this.http.get(url, this.httpOptions);
         
+    }
+
+    postRepoRequest(jsonString):Observable<any>{
+        var url = "https://api.github.com/user/repos";
+        console.log('in service: ' + jsonString);
+        return this.http.post<any>(url, jsonString, this.httpOptions);
     }
 
 }

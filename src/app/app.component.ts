@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
     ngOnInit() {
     }
 
-    sample(keyword){
+    letsSearch(keyword){
 
         if(keyword == ''){
             console.log('null keyword');
@@ -30,5 +30,9 @@ export class AppComponent implements OnInit{
             this.router.navigateByUrl('').then(() => {
             this.router.navigate(['/search',keyword]);});
         }
+    }
+
+    newRepo(){
+        this.router.navigate(['/newrepo']);
     }
 }
