@@ -15,8 +15,8 @@ export class ProfileSidebarComponent implements OnInit {
 
     ngOnInit() {
         this._githubService.getUserData()
-            .subscribe(data => this.userJson = data);
-
+        .subscribe( data => this.userJson = data);        
     }
+    
 
 }

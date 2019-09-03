@@ -1,0 +1,21 @@
+.fav-repo-item{
+    background: white;
+    border-radius: 5px;
+    border-color: rgb(238, 238, 238);
+    border-width: 2px;
+    border-style: solid;
+    margin: 5px auto;
+    padding: 10px;
+    min-height: 100px;
+
+    cursor: pointer;
+}
+
+.fav-repo-item:hover{
+    border-color: rgb(194, 192, 192);
+    box-shadow: 0px 0px 10px 2px rgb(194, 192, 192);
+}
+
+.item-desc{
+    color: rgb(114, 112, 112);
+}

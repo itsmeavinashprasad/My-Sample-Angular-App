@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from './github.service';
-import { User } from 'src/assets/userInterface';
 import { Router } from '@angular/router';
 
 
@@ -40,5 +39,9 @@ export class AppComponent implements OnInit{
 
     newRepo(){
         this.router.navigate(['/newrepo']);
+    }
+
+    favourites(){
+        this.router.navigate(['/favourites']);
     }
 }

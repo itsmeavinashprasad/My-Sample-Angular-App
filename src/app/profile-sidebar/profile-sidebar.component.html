@@ -1,11 +1,11 @@
 <div id="sidebar-wrapper">
     <div  id="image-wrapper">
-        <img src={{userJson.avatar_url}} alt="Card image" id="profile-photo">
+        <img src={{userJson.avatar_url}} alt="Avatar Image" id="profile-photo">
     </div>
     
     <div  id="user-details" >
         <h4 id="user-name"> {{userJson.name}} </h4>
-        <h5 id="user-login"> <a href=" {{userJson.html_url}} " > /{{userJson.login}} </a>  </h5>
+        <h5 id="user-login"> <a href="{{userJson.html_url}}"  target="_blank"> /{{userJson.login}} </a>  </h5>
         <br>
         
         <p id="user-location" > 
@@ -19,6 +19,7 @@
         </p>
         
         <p id="user-bio" > {{userJson.bio}} </p>
+
 
     </div>
 </div>

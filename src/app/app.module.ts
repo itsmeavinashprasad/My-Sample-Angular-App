@@ -11,6 +11,7 @@ import { OthersComponent } from './others/others.component';
 import { NewRepoComponent } from './new-repo/new-repo.component';
 import { FormsModule } from '@angular/forms';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 // import { ListRepoComponent } from './list-repo/list-repo.component';
 // import { SearchRepoComponent } from './search-repo/search-repo.component';
 
@@ -22,6 +23,7 @@ import { RepoDetailsComponent } from './repo-details/repo-details.component';
     routingComponents,
     NewRepoComponent,
     RepoDetailsComponent,
+    FavouritesComponent,
     // ListRepoComponent,
     // SearchRepoComponent
   ],

@@ -1,0 +1,13 @@
+<div id="fav-repo-wrapper">
+    
+    <div (click)="setRepoDetails(i)" class="fav-repo-item" *ngFor="let repo of listFavs; index as i">
+        <h4 > {{repo.name}} </h4>
+        <p class="item-desc"> {{repo.comments}} </p>
+    </div>
+
+    <!-- <div class="list-repo-item">
+        <h4 > {{listRepo[1].name}} </h4>
+        <p class="item-desc"> {{listRepo[1].description}} </p>
+    </div> -->
+
+</div>
