@@ -11,11 +11,15 @@ export class ProfileSidebarComponent implements OnInit {
     constructor(private _githubService: GithubService) { }
 
 
-    public userJson:any;
+    private userJson:any;
+    private ready:boolean = false ;
 
     ngOnInit() {
         this._githubService.getUserData()
-        .subscribe( data => this.userJson = data);        
+        .subscribe( (data) => {
+            this.userJson = data;        
+            this.ready = true;
+        });
     }
     
 

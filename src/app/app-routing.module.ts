@@ -5,6 +5,7 @@ import { SearchRepoComponent } from './search-repo/search-repo.component';
 import { NewRepoComponent } from './new-repo/new-repo.component';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'newrepo', component: NewRepoComponent },
   { path: 'favourites', component: FavouritesComponent },
   { path: 'details/:owner/:reponame', component: RepoDetailsComponent },
+  { path: '**', component: PageNotFoundComponent },
 
 
 ];
@@ -30,5 +32,6 @@ export const routingComponents = [
   SearchRepoComponent,
   NewRepoComponent,
   FavouritesComponent,
-  RepoDetailsComponent
+  RepoDetailsComponent, 
+  PageNotFoundComponent
 ]

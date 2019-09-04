@@ -8,8 +8,6 @@
     padding: 10px;
     min-height: 100px;
 
-    /* display: flex;
-    flex-wrap: nowrap; */
 }
 .search-item:hover{
     border-color: rgb(194, 192, 192);

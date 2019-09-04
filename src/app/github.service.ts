@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { retry, catchError  } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -62,7 +61,7 @@ export class GithubService {
     // used to get repository details 
     getRepoDetails(owner:string, reponame:string){
         var url = "https://api.github.com/repos/"+owner+"/"+reponame; 
-        return this.http.get(url);
+        return this.http.get(url, this.httpOptions);
     }
     
     // used to get user name of logged in user
@@ -71,8 +70,8 @@ export class GithubService {
     }
     
     // used to post request to delete repository
-    deleteRepo(){
-        var url = "https:api.github.com/repos/"+this.userName+"/"+this.repodetails.name;
+    deleteRepo(reponame:string){
+        var url = "https:api.github.com/repos/"+this.userName+"/"+reponame;
         if(confirm('You are about to delete: ' + url) == true){
             return this.http.delete(url, this.httpOptions);
         }
@@ -95,6 +94,12 @@ export class GithubService {
     deleteFromFavourites(repoId){
         var jsonUrl = "http://localhost:3000/items/"+repoId;
         return this.http.delete(jsonUrl) ;
+    }
+
+    // used to update comment of item in favourites.json
+    updateComment(repoId, jsonObj){
+        var jsonUrl = "http://localhost:3000/items/"+repoId;
+        return this.http.patch(jsonUrl, jsonObj) ;
     }
 
     // used to get array of objects in favourites.json

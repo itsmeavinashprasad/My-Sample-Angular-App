@@ -1,13 +1,12 @@
 <div id="list-repo-wrapper">
     
-    <div (click)="setRepoDetails(i)" class="list-repo-item" *ngFor="let repo of listRepo; index as i">
+    <div (click)="setRepoDetails(i)"  class="list-repo-item" *ngFor="let repo of listRepo; index as i">
         <h4 > {{repo.name}} </h4>
+        <div *ngIf="repo.private; then thenBlock" ></div>
+        <ng-template #thenBlock>
+            Private
+        </ng-template>
         <p class="item-desc"> {{repo.description}} </p>
     </div>
-
-    <!-- <div class="list-repo-item">
-        <h4 > {{listRepo[1].name}} </h4>
-        <p class="item-desc"> {{listRepo[1].description}} </p>
-    </div> -->
 
 </div>

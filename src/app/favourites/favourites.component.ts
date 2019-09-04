@@ -23,6 +23,6 @@ export class FavouritesComponent implements OnInit {
     var repodetails = this.listFavs[index];
     this.router.navigate(['/details', repodetails.owner, repodetails.name ]); 
 
-}
+  }
 
 }

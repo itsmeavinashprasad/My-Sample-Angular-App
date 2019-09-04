@@ -40,10 +40,8 @@
     }
     #image-wrapper{
         width: 40%;
-        /* float: left; */
     }
     #user-details{
-        /* float: right;/ */
         width: 60%;
     }
 }

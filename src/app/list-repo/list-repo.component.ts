@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GithubService } from '../github.service';
 import { Router } from '@angular/router';
 
@@ -24,4 +24,7 @@ export class ListRepoComponent implements OnInit {
 
     }
 
+    
 }
+
+
